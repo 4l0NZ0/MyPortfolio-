@@ -16,5 +16,4 @@
 </div>
 <div>
    <img src={HeroImage} alt="A cartoon of me drinking coffee with a cat beside me."/>
-
 </div>
