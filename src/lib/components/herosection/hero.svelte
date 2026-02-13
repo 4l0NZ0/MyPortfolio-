@@ -1,3 +1,7 @@
+<script>
+   import HeroImage from "../../assets/DrinkingCoffeeCharacter.svg"
+</script>
+
 <div class=" bg-white text-center ">
     <div class = "text-5xl text-[#FF914B]" style="font-family: 'Bobby Jones Soft', sans-serif; ">
         ALONZO BUSTAMANTE
@@ -9,4 +13,8 @@
         I WRITE CODE, BUILD APPS AND LOVE TO DRINK COFFEE.
     </div>
         
-    </div>
+</div>
+<div>
+   <img src={HeroImage} alt="A cartoon of me drinking coffee with a cat beside me."/>
+
+</div>
