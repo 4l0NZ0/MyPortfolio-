@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Bobby Jones Soft";
+  src:
+    url("/src/lib/assets/fonts/BobbyJones-Soft.otf") format("opentype"),
+    url("/src/lib/assets/fonts/BobbyRough-Soft.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
