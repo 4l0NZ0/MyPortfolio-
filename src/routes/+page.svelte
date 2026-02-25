@@ -2,16 +2,17 @@
     import Header from '../lib/components/navigation/header.svelte'
     import Hero from '../lib/components/herosection/hero.svelte'
     import AboutMe from '../lib/components/aboutme/aboutme.svelte'
-    import Projects from '../lib/components/projects/projects.svelte'
+    import Projects from '../lib/components/projectssection/projects.svelte'
+    import Skills from '../lib/components/skillssection/skillssection.svelte'
 </script>
 
 <Header/>
 <Hero/>
 <AboutMe/>
 <Projects/>
-<h1 class="text-3xl font-bold underline">
-  Hello world!
-</h1>
+<Skills/>
+
+
 <style lang="postcss">
   @reference "tailwindcss";
   :global(html) {
