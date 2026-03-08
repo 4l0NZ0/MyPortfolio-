@@ -16,6 +16,6 @@
 <style lang="postcss">
   @reference "tailwindcss";
   :global(html) {
-    background-color: #FF914B;
+    background-color: #EEEEE2;
   }
 </style>

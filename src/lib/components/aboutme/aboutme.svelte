@@ -9,10 +9,7 @@
         <div>
         <Descriptiontext/>
          </div>
-        <div>
-             <img src={CoffeeJug} alt="A cartoon of me drinking coffee with a cat beside me."/>
-        </div>
-  
+       
     
    
     </div>
