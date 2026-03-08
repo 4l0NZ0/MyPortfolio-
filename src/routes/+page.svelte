@@ -6,11 +6,15 @@
     import Skills from '../lib/components/skillssection/skillssection.svelte'
 </script>
 
+<div class="container mx-auto px-3">
 <Header/>
 <Hero/>
 <AboutMe/>
 <Projects/>
 <Skills/>
+  
+</div>
+
 
 
 <style lang="postcss">

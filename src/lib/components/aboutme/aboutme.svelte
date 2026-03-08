@@ -9,10 +9,9 @@
         <SectionHeader sectionTitle = "About Me" />
 
     
-        <div class=" flex flex-col items-center  text-center text-xl text-[#191A14" style="font-family: 'The Retro Font', sans-serif;">
+        <div class=" flex flex-col items-center  text-center text-xl text-[#191A14] p-8" style="font-family: 'The Retro Font', sans-serif;">
         <Descriptiontext/>
          </div>
-        
     
    
     </div>
