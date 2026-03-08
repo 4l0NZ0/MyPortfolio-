@@ -3,6 +3,6 @@
  </script>
  
  
- <div class = " text-2xl text-[#FF914B]" style="font-family: 'Bobby Jones Soft', sans-serif;">
+ <div class = " text-5xl text-[#191A14]" style="font-family: 'The Retro Font', sans-serif; ">
     {props.sectionTitle}
     </div>
