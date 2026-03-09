@@ -6,15 +6,19 @@
     import {projects} from "../../projects_data/projects"
 </script>
 
-<div class=" flex flex-col items-center bg-[#EFE4D6]  ">
+
+    <div class = " pt-4 p-4">
     <SectionHeader sectionTitle="Projects" />
 
+    </div>
 
-        <div>
+    <div class=" grid gap-2 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 ">
+
+      
             {#each projects as project}
             <ProjectCard image={project.image} projectName={project.name} projectDescription={project.description}/>
             {/each}
-        </div>
+      
 
 
     </div>
