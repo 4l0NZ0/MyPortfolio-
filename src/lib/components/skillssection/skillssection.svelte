@@ -9,10 +9,10 @@
 
 </script>
 
-<div class=" flex flex-col items-center bg-[#EFE4D6]  ">
+<div class  =" border-6 ">
     <SectionHeader sectionTitle="Skills" />
 
-    <div  class="grid grid-cols-3 gap-4 ">
+    <div  class="grid grid-cols-2 gap-2 ">
         {#each images as image}
 	        <img src={image} alt="logo" />
         {/each}
