@@ -38,8 +38,8 @@
 </div>
 
 <div class ="grid grid-cols-1">
-  <label style="font-family: 'The Retro Font', sans-serif; " for="message">Message</label>
-  <textarea class = "border-6 border-[#191A14]" rows="4" name="message" bind:value={$form.message} ></textarea>
+  <label style="font-family: 'The Retro Font', sans-serif; " for="usermessage">Message</label>
+  <textarea class = "border-6 border-[#191A14]" rows="4" name="usermessage" bind:value={$form.usermessage} ></textarea>
 </div>
   <div class="grid grid-cols-1  place-content-center  "> 
 <button style="font-family: 'The Retro Font', sans-serif; " class=" text-4xl border-6 p-1 text-[#F14133] hover:border-transparent hover:bg-[#F14133] hover:text-[#EFE4D6] active:bg-[#F81200]" >
