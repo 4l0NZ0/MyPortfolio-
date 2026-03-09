@@ -1,6 +1,5 @@
 <script lang="ts">
     import SectionHeader from "../sectionheaders/sectionheaders.svelte"
-    import HtmlIcon from "../../assets/programminglanguageicons/Html.svg"
   
     const modules = import.meta.glob<{default:string}>('/src/lib/assets/programminglanguageicons/*.{png,jpg,svg}',{eager:true});
 

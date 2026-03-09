@@ -23,6 +23,9 @@
 	"dependencies": {
 		"@tailwindcss/vite": "^4.1.18",
 		"@tailwindplus/elements": "^1.0.22",
-		"tailwindcss": "^4.1.18"
+		"resend": "^6.9.3",
+		"sveltekit-superforms": "^2.28.1",
+		"tailwindcss": "^4.1.18",
+		"zod": "^4.3.6"
 	}
 }
