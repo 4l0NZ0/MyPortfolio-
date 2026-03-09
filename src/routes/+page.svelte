@@ -9,7 +9,7 @@
     import SuperDebug from 'sveltekit-superforms';
 
     const { data } = $props();
-    const { form } = superForm(data.form);
+    const { form,enhance,message } = superForm(data.form);
 
 
 
@@ -24,7 +24,7 @@
 <Skills/>
 <Contact/>
 
-<form method="POST">
+<form method="POST" use:enhance>
 <div class ="grid gap-3 grid-cols-1 text-[#191A14] " >
 
 <div class ="grid grid-cols-1">
@@ -48,10 +48,15 @@
 </div>
  
 </form>
-  
-</div>
-<SuperDebug data = {$form}/>
 
+</div>
+<div>
+This is the message
+{#if $message}
+	<p class="text-green-600">Message sent successfully!</p>
+{/if}
+
+</div>
 
 <style lang="postcss">
   @reference "tailwindcss";

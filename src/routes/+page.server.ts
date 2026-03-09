@@ -11,11 +11,14 @@ export const load = async () => {
 export const actions = {
   default: async ({ request }) => {
     const form = await superValidate(request, zod(contactSchema));
+    console.log(form);
 
     if (!form.valid) {
       return fail(400, { form });
     }
 
-    return message(form, "Form posted succesfully");
+    //if form valid submit
+
+    return message(form, "Form posted successfully");
   },
 };
