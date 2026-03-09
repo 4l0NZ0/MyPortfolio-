@@ -4,7 +4,7 @@
    import SectionHeader from "../sectionheaders/sectionheaders.svelte";
 </script>
 
-<div class=" border-3" >
+<div class=" border-6" >
     
         <SectionHeader sectionTitle = "About Me" />
 
