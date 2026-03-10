@@ -8,12 +8,11 @@
 
 </script>
 
-<div class  =" border-6 ">
+<div>
     <SectionHeader sectionTitle="Skills" />
-
-    <div  class="grid grid-cols-2 gap-2 ">
+    </div>
+     <div  class=" border-3 grid grid-cols-2 gap-2 md:grid-cols-5 ">
         {#each images as image}
 	        <img src={image} alt="logo" />
         {/each}
         </div>
-    </div>
