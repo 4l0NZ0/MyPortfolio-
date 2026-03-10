@@ -17,8 +17,13 @@
 
 
 <div class="container mx-auto px-3">
+<div class=" md:hidden">
 <Header/>
+</div>
 <Hero/>
+<div class="hidden md:block">
+<Header/>
+</div>
 <AboutMe/>
 <Projects/>
 <Skills/>
