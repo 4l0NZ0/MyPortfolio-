@@ -16,9 +16,11 @@ export const actions = {
   default: async ({ request }) => {
     const form = await superValidate(request, zod(contactSchema));
     //USed for debugging purposes
-    console.log(form);
+    //console.log(form);
 
     if (!form.valid) {
+      // Will return fail(400, { form }) since form isn't valid
+
       return fail(400, { form });
     }
 
@@ -34,12 +36,12 @@ export const actions = {
       console.log(error);
       return message(
         form,
-        "Somethin went wrong sending the email. Try again later.",
+        "Something went wrong sending the email. Try again later.",
       );
     }
 
     //if form valid submit
 
-    return message(form, "Form posted successfully");
+    return message(form, "Form posted successfully!");
   },
 };
