@@ -4,14 +4,21 @@
        
     
     let  { data } = $props();
-    const { form,enhance,message,errors,constraints,delayed } = superForm(data.form,{
+    const { form,enhance,message,errors,constraints,delayed,allErrors } = superForm(data.form,{
     onUpdated({form : f}){
         if (f.valid){
             setTimeout(()=>{
                 $message ='';
-            },5000);
+            },7000);
         }
-    }
+          if (!f.valid){
+            setTimeout(()=>{
+                $message ='';
+            },7000);
+        }
+    },
+ 
+
    });
 </script>
 
@@ -26,8 +33,27 @@
 
 
 {#if $message}
-<div class = "border-1 bg-[#2ECC71] h-10 container mx-auto m-3 text-center text-2xl text-[#EEEEE2] " style="font-family: 'The Retro Font', sans-serif; ">{$message}</div>
+<div
+class="h-20 container mx-auto m-3 text-center text-2xl text-[#EEEEE2]
+{$message.type === 'success' ? 'bg-[#2ECC71]' : 'bg-red-500'}"
+style="font-family: 'The Retro Font', sans-serif;"
+>
+{$message.text}
+</div>
 {/if}
+
+{#if $allErrors.length}
+  <ul>
+    {#each $allErrors as error}
+      <li>
+        <b>{error.path}:</b>
+        {error.messages.join('. ')}
+      </li>
+    {/each}
+  </ul>
+{/if}
+
+
 <form method="POST" use:enhance>
 
 <div class ="grid gap-4 grid-cols-2 text-[#191A14] container mx-auto px-3 lg:grid-cols-2 " >
@@ -37,8 +63,9 @@
     type="text" 
     name="name" 
     aria-invalid={$errors.name ? 'true' : undefined}
-    {...$constraints.name}
     bind:value={$form.name}>
+
+    {#if $errors.name}<span>{errors.name}</span>{/if}
 </div>
 
 <div class="mt-4 col-span-2">
@@ -48,8 +75,8 @@
     type="email" 
     name="email" 
     aria-invalid={$errors.email ? 'true' : undefined}
-    {...$constraints.email}
     bind:value={$form.email} />
+
     {#if $errors.email}<span>{errors.email}</span>{/if}
 </div>
 
@@ -60,7 +87,6 @@
     rows="4" 
     name="usermessage" 
     aria-invalid={$errors.usermessage ? 'true' : undefined}
-    {...$constraints.usermessage}
     bind:value={$form.usermessage} >
     </textarea>
     {#if $errors.usermessage}<span>{errors.usermessage}</span>{/if}

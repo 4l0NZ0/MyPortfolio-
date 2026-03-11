@@ -2,7 +2,11 @@ import { superValidate, message } from "sveltekit-superforms";
 import { zod } from "sveltekit-superforms/adapters";
 import { contactSchema } from "$lib/schemas/contact";
 import { fail } from "@sveltejs/kit";
-import { RESEND_API_KEY, EMAIL_ADDRESS } from "$env/static/private";
+import {
+  RESEND_API_KEY,
+  EMAIL_ADDRESS,
+  TEST_INVALID_KEY,
+} from "$env/static/private";
 import { Resend } from "resend";
 
 export const load = async () => {
@@ -11,6 +15,7 @@ export const load = async () => {
 };
 
 const resend = new Resend(RESEND_API_KEY);
+//const resend = new Resend(TEST_INVALID_KEY);
 
 export const actions = {
   default: async ({ request }) => {
@@ -21,7 +26,10 @@ export const actions = {
     if (!form.valid) {
       // Will return fail(400, { form }) since form isn't valid
 
-      return fail(400, { form });
+      return message(form, {
+        type: "error",
+        text: "Something went wrong. Please try again later.",
+      });
     }
 
     const { name, email, usermessage } = form.data;
@@ -30,18 +38,30 @@ export const actions = {
       from: "Portfolio <onboarding@resend.dev>",
       to: [EMAIL_ADDRESS],
       subject: "inquiry",
-      text: usermessage,
+      html: `
+    <h2>New Contact Form Submission</h2>
+
+    <p><strong>Name:</strong> ${name}</p>
+
+    <p><strong>Email:</strong> ${email}</p>
+
+    <p><strong>Message:</strong></p>
+    <p>${usermessage}</p>
+  `,
     });
     if (error) {
       console.log(error);
-      return message(
-        form,
-        "Something went wrong sending the email. Try again later.",
-      );
+      return message(form, {
+        type: "error",
+        text: "Something went wrong. Please try again later.",
+      });
     }
 
     //if form valid submit
 
-    return message(form, "Form posted successfully!");
+    return message(form, {
+      type: "success",
+      text: "Message sent successfully!",
+    });
   },
 };
